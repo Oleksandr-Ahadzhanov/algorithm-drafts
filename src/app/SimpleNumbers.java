@@ -1,10 +1,8 @@
 package app;
 
-import java.util.ArrayList;
-
 public class SimpleNumbers {
 
-    public static boolean checkIfPrime(int number) {
+    private static boolean checkIfPrime(int number) {
         int sqrtNumber = (int) Math.sqrt(number);
         for (int i = 2; i <= sqrtNumber; i++) {
             if (number % i == 0) {
@@ -30,11 +28,12 @@ public class SimpleNumbers {
         for (int j = 2; j <= max; j++) {
             if(flag!=quantity) {
                 if (checkIfPrime(j)) {
-                    System.out.print(j + ",  ");
+                    System.out.print(j + " ");
                     flag++;
                 }
             }
         }
+        System.out.println();
     }
 }
 
