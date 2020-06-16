@@ -1,5 +1,5 @@
 import static app.ArrayCalculator.arrayCalculate;
-import static app.Fibonacci.printFibNumbers;
+import static app.Fibonacci.*;
 import static app.SimpleNumbers.showSimpleNumbers;
 import static app.StringEditor.capitalLetterString;
 import static app.StringEditor.stringPartsReverse;
@@ -16,11 +16,13 @@ public class Main {
         System.out.println(stringPartsReverse(myStringExtended));
         System.out.println(capitalLetterString(myStringExtended));
 
-//        System.out.println(arrayCalculate(myArray));
-//
-//        showSimpleNumbers(10);
-//
-//        printFibNumbers(10);
+        System.out.println(arrayCalculate(myArray));
+
+        showSimpleNumbers(10);
+
+//        printFibNumbersByLoop(10);
+        printFibonacciByRecursion(10);
+
 
 
 

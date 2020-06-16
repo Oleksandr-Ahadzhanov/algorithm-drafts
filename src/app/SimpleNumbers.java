@@ -22,18 +22,22 @@ public class SimpleNumbers {
 
     public static void showSimpleNumbers(int quantity) {
 
-        int max = 10000;
+        int max = 100000;
         int flag = 0;
 
-        for (int j = 2; j <= max; j++) {
-            if(flag!=quantity) {
-                if (checkIfPrime(j)) {
-                    System.out.print(j + " ");
-                    flag++;
+        if (quantity > max) {
+            System.out.println("Сорянчик но это уже перебор");
+        } else {
+            for (int j = 2; j <= max; j++) {
+                if (flag != quantity) {
+                    if (checkIfPrime(j)) {
+                        System.out.print(j + " ");
+                        flag++;
+                    }
                 }
             }
+            System.out.println();
         }
-        System.out.println();
     }
 }
 
