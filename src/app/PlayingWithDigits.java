@@ -1,22 +1,27 @@
 package app;
+import java.util.ArrayList;
+import java.util.Collections;
+
 import static java.lang.Math.*;
 
 public class PlayingWithDigits {
     public static long digPow(int n, int p) {
-        String valueOfNumber = String.valueOf(n);
-        char[] numbersArray = valueOfNumber.toCharArray();
 
-        double finalValue = 0;
+        ArrayList<Integer> numbersArray = new ArrayList<>();
+        for (Integer i = n; i > 0; i = i / 10) {
+            numbersArray.add(i%10);
+        }
+        Collections.reverse(numbersArray);
 
-        for (int i = 0; i < numbersArray.length; i++) {
-            finalValue = finalValue + pow(numbersArray[i],p);
-            p += 1;
+        long finalValue = 0;
+
+        for (Integer index = 0; index < numbersArray.size(); index++) {
+            finalValue = finalValue + (long) pow(numbersArray.get(index),p+index);
         }
 
-//        if(finalValue % n == 0) {
-//            double result = finalValue/n;
-//            return (long) result;
-//        } else return -1;
-        return (long)finalValue;
+        if(finalValue % n == 0) {
+            long result = finalValue/n;
+            return  result;
+        } else return -1;
     }
 }
